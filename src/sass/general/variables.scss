@@ -1,27 +1,39 @@
-$width-desktop:   1440px;
-$width-laptop:    1200px;
+$width-desktop: 1440px;
+$width-laptop: 1290px;
 $width-tablet-lg: 1024px;
-$width-tablet:     768px;
-$width-mobile:     375px;
-$width-min:        320px;
+$width-tablet: 769px;
+$width-mobile: 375px;
+$width-min: 320px;
 
 $width-tablet-media: 1000px;
 
-$height-desktop:   800px;
-$height-tablet:    768px;
+$height-desktop: 800px;
+$height-tablet: 768px;
 
-$retina-dpi:      144dpi;
-$retina-dppx:    1.5dppx;
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
 
-$font-family: "Rkm", "Arial", sans-serif;
+$ms-regular: "Montserrat-Regular", "Arial", sans-serif;
+$ms-semi-bold: "Montserrat-SemiBold", "Arial", sans-serif;
+$ms-extra-bold: "Montserrat-ExtraBold", "Arial", sans-serif;
+
 $font-main: 16px;
 
-$black:           #000000;
-$white:           #ffffff;
+$black: #000000;
+$white: #ffffff;
+
+$white-25: rgba(255, 255, 255, 0.25);
+$white-40: rgba(255, 255, 255, 0.4);
+
+$blue: #50b1d7;
+$gold: #ffe640;
+$grey: #313131;
+$tundora: #484848;
+$falcon: #85607a;
+
+$blue-shadow:  0px 0px 6px 6px rgba(80, 177, 215, 0.7);
+
+$gradient-blue: linear-gradient(135deg, #50b1d7, #1b92c1);
+
 $transparent: transparent;
-
-
-
-
-
 

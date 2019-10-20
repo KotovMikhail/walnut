@@ -930,11 +930,27 @@ button.swiper-pagination-bullet {
 
 /* General */
 @font-face {
-  font-family: "Rkm";
+  font-family: "ms-regular";
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("../fonts/rkm-regular.woff2") format("woff2"), url("../fonts/rkm-regular.woff") format("woff");
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "ms-semi-bold";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "ms-extra-bold";
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
 }
 
 html {
@@ -968,7 +984,7 @@ body {
   font-size: 1rem;
   line-height: 1.625rem;
   font-weight: normal;
-  font-family: "Rkm", "Arial", sans-serif;
+  font-family: "Montserrat-Regular", "Arial", sans-serif;
   font-weight: 400;
   color: #000000;
   background-color: #ffffff;
@@ -987,17 +1003,25 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1290px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 2.84722vw;
+  padding: 0 2.70833vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .container {
-    padding: 0 10px;
+    max-width: 690px;
+    padding: 0 39px;
+  }
+}
+
+@media (max-width: 374px) {
+  .container {
+    max-width: 290px;
+    padding: 0 15px;
   }
 }
 
@@ -1020,128 +1044,10 @@ body {
 }
 
 /* Blocks */
-.gallery {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-.gallery__banner-wrapper {
-  margin-bottom: 50px;
-}
-
-.gallery__banner {
-  width: 100%;
-  max-width: 90rem;
-  height: auto;
-  display: block;
-}
-
-.gallery__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
-  grid-auto-rows: minmax(25.8125rem, auto);
-  grid-gap: 1.25rem;
-  justify-items: center;
-}
-
-@media (max-width: 374px) {
-  .gallery__list {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-}
-
-.gallery__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  border: 1px solid #000000;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.gallery__link {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  height: 100%;
-}
-
-.gallery__content {
-  padding-top: 0.9375rem;
-  padding-right: 1.25rem;
-  padding-bottom: 0.9375rem;
-  padding-left: 1.25rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-@media (max-width: 767px) {
-  .gallery__content {
-    padding-top: 8px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 8px;
-  }
-}
-
-.gallery__img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  max-height: 300px;
-  display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.gallery__caption {
-  margin: 0;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: normal;
-}
-
-@media (max-width: 767px) {
-  .gallery__caption {
-    font-size: 1rem;
-    line-height: 1.625rem;
-    font-weight: normal;
-  }
-}
-
-.gallery__date {
-  display: block;
-  margin-top: auto;
+.header__slogan {
+  width: 200px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 0px 6px 6px rgba(80, 177, 215, 0.7);
+          box-shadow: 0px 0px 6px 6px rgba(80, 177, 215, 0.7);
 }

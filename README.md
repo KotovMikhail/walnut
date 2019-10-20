@@ -1,7 +1,7 @@
-# voshod
+# Тестовое задание
 
 # Посмотреть сайт можно по ссылке:
-https://kotovmikhail.github.io/voshod/build/index.html
+https://kotovmikhail.github.io/walnut/build/index.html
 
 ## Установка и сборка
 

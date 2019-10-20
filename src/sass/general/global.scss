@@ -26,7 +26,7 @@ body {
   padding: 0;
 
   @include font-xs;
-  font-family: $font-family;
+  font-family: $ms-regular;
   font-weight: 400;
   color: $black;
   background-color: $white;
@@ -45,14 +45,20 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1290px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 size-desktop(41px);
+  padding: 0 size-desktop(39px);
   box-sizing: border-box;
 
   @include mobile {
-    padding: 0 10px;
+    max-width: 690px;
+    padding: 0 39px;
+  }
+
+  @include mobile-small {
+    max-width: 290px;
+    padding: 0 15px;
   }
 }
 
