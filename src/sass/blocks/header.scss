@@ -1,9 +1,125 @@
 .header {
+  position: relative;
+  padding-bottom: 110px;
+  background-color: $black;
+  background-image: url("../../img/header-bg-desktop.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: $black-50;
+  }
+
+  &__wrap {
+    width: 100%;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 31px;
+    padding-bottom: 20px;
+  }
+
+  &__descr {
+    @include font-xxxs;
+    margin: 0;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__descr-work,
+  &__mail,
+  &__callback {
+    @include font-xxxs-sb;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__descr-work {
+    &:hover {
+      color: $gold;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__mail {
+    border-bottom: 1px dashed transparent;
+    padding-bottom: 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: $blue;
+      border-bottom: 1px dashed $blue;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__callback {
+    color: $blue;
+    border-bottom: 1px dashed $blue;
+    padding-bottom: 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: $gold;
+      border-bottom: 1px dashed $gold;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 90px;
+  }
 
   &__slogan {
-    width: 200px;
-    height: 70px;
-    background-color: $white-40;
-    box-shadow: $blue-shadow;
+    width: 100%;
+    max-width: 105px;
+    margin: 0;
+    margin-left: 14px;
+    @include font-xxxs;
+    letter-spacing: 0.5px;
+  }
+
+  &__menu {
+    margin-left: 58px;
+  }
+
+  &__phone {
+    margin-left: auto;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 77px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+
+    & span:nth-child(1) {
+      @include font-xxl-exb;
+      color: $gold;
+    }
+
+    & span:nth-child(2) {
+      @include font-large-sb;
+      line-height: 35px;
+      letter-spacing: 1.8px;
+      color: $white;
+    }
   }
 }

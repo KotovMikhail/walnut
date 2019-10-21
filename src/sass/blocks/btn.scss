@@ -1,0 +1,35 @@
+.btn {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  color: inherit;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  @include font-xs-sb;
+  vertical-align: top;
+  text-align: center;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transition: all 0.3s ease-in-out;
+  }
+
+  &--confirm {
+    padding-top: 25px;
+    padding-right: 120px;
+    padding-bottom: 25px;
+    padding-left: 120px;
+    background-color: $blue;
+
+    &:hover {
+      background-color: $gold;
+      color: $black;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+.form {
+  border: none;
+
+  &__fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__legend {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 25px;
+    width: 100%;
+    @include font-xs-reg;
+    text-align: center;
+    letter-spacing: size(0.8px);
+    color: $white;
+    border: none;
+  }
+
+  &__fields {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 48px;
+    width: 100%;
+    max-width: 850px;
+    flex-wrap: wrap;
+  }
+
+  &__input {
+    padding-top: 22px;
+    padding-right: 30px;
+    padding-bottom: 22px;
+    padding-left: 30px;
+    width: 100%;
+    max-width: 411px;
+    border-radius: 8px;
+    border: none;
+    background-color: $white-25;
+    box-sizing: border-box;
+    @include font-xs-sb;
+    letter-spacing: 1.8px;
+    color: $white-25;
+    transition: all 0.3s ease-in-out;
+
+    &::placeholder {
+      @include font-xs-sb;
+      color: $white-25;
+    }
+
+    &--phone {
+      letter-spacing: 0.5px;
+    }
+
+    &:hover {
+      background-color: $white-40;
+      color: $white-40;
+      transition: all 0.3s ease-in-out;
+
+      &::placeholder {
+        color: $white-40;
+      }
+    }
+
+    &:focus {
+      color: $white;
+      box-shadow: $blue-shadow;
+      outline: none;
+      transition: all 0.3s ease-in-out;
+
+      &::placeholder {
+        color: $white;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  &__label {
+    &--confirm {
+      position: relative;
+      width: 100%;
+      max-width: 660px;
+      margin: 0 auto;
+      margin-top: 24px;
+      padding-left: 36px;
+      font-size: 12px;
+      line-height: 24px;
+      letter-spacing: 0.8px;
+      text-align: center;
+      cursor: pointer;
+      box-sizing: border-box;
+      transition: all 0.3s ease-in-out;
+
+      & span {
+        color: $blue;
+        border-bottom: 1px solid $blue;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+        background-color: $white;
+      }
+    }
+  }
+
+  &__input {
+    &--confirm:checked + .form__label--confirm::after {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      background-color: $blue;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__btn {
+    margin: 0 auto;
+  }
+}

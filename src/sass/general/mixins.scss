@@ -46,52 +46,82 @@
   }
 }
 
-@mixin font-xxl {
-  font-size: size(64px);
-  line-height: size(72px);
-  font-weight: normal;
+@mixin font-xxl-exb {
+  font-family: ms-extra-bold;
+  font-size: 64px;
+  line-height: 90px;
+  font-weight: 800;
 }
 
 @mixin font-xl {
-  font-size: size(56px);
-  line-height: size(64px);
+  font-size: 56px;
+  line-height: 64px;
   font-weight: normal;
 }
 
-@mixin font-large {
-  font-size: size(40px);
-  line-height: size(47px);
-  font-weight: normal;
+@mixin font-large-sb {
+  font-family: $ms-semi-bold;
+  font-size: 40px;
+  line-height: 56px;
+  font-weight: 600;
 }
 
-@mixin font-medium {
-  font-size: size(32px);
-  line-height: size(40px);
-  font-weight: normal;
+@mixin font-medium-sb {
+  font-family: $ms-semi-bold;
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 600;
 }
 
 @mixin font-small {
-  font-size: size(24px);
-  line-height: size(32px);
+  font-size: 24px;
+  line-height: 32px;
   font-weight: normal;
+}
+
+@mixin font-xs-reg {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+@mixin font-xs-sb {
+  font-family: $ms-semi-bold;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
 }
 
 @mixin font-xs {
-  font-size: size(16px);
-  line-height: size(26px);
+  font-size: 16px;
+  line-height: 26px;
   font-weight: normal;
 }
 
+@mixin font-xs-sb {
+  font-family: $ms-semi-bold;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 600;
+}
+
 @mixin font-xxs {
-  font-size: size(14px);
-  line-height: size(20px);
+  font-size: 14px;
+  line-height: 20px;
   font-weight: normal;
 }
 
 @mixin font-xxxs {
-  font-size: size(12px);
-  line-height: size(18px);
+  font-size: 12px;
+  line-height: 16px;
   font-weight: normal;
+}
+
+@mixin font-xxxs-sb {
+  font-family: $ms-semi-bold;
+  font-size: 12px;
+  line-height: 14.4px;
+  font-weight: 600;
 }
 
 @mixin font-face($name, $filename, $weight, $style: normal) {

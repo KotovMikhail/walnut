@@ -1,0 +1,27 @@
+.menu {
+  &__list {
+    display: flex;
+    @include list-reset;
+    justify-content: flex-start;
+  }
+
+  &__item {
+    margin-right: 85px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    @include font-xs-sb;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $gold;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
