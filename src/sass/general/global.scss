@@ -28,8 +28,8 @@ body {
   @include font-xs;
   font-family: $ms-regular;
   font-weight: 400;
-  color: $black;
-  background-color: $white;
+  color: $white;
+  background-color: $black;
 }
 
 .visually-hidden {
@@ -48,18 +48,13 @@ body {
   max-width: 1290px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 size-desktop(39px);
-  box-sizing: border-box;
+  padding: 0 50px;
 
-  @include mobile {
-    max-width: 690px;
+  @include tablet-small {
     padding: 0 39px;
   }
 
-  @include mobile-small {
-    max-width: 290px;
+  @include mobile {
     padding: 0 15px;
   }
 }
-
-

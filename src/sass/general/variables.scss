@@ -1,7 +1,7 @@
 $width-desktop: 1440px;
 $width-laptop: 1290px;
 $width-tablet-lg: 1024px;
-$width-tablet: 769px;
+$width-tablet: 768px;
 $width-mobile: 375px;
 $width-min: 320px;
 
@@ -20,6 +20,7 @@ $ms-extra-bold: "Montserrat-ExtraBold", "Arial", sans-serif;
 $font-main: 16px;
 
 $black: #000000;
+$black-50: rgba(0,0,0, 0.50);
 $white: #ffffff;
 
 $white-25: rgba(255, 255, 255, 0.25);
@@ -31,7 +32,8 @@ $grey: #313131;
 $tundora: #484848;
 $falcon: #85607a;
 
-$blue-shadow:  0px 0px 6px 6px rgba(80, 177, 215, 0.7);
+$blue-shadow:  0px 0px 6px 3px rgba(80, 177, 215, 0.7);
+$black-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 
 $gradient-blue: linear-gradient(135deg, #50b1d7, #1b92c1);
 

@@ -1,0 +1,16 @@
+.phone {
+  @include font-medium-sb;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease-in-out;
+
+  &__color {
+    color: $blue;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover > &__color {
+    color: $gold;
+    transition: all 0.3s ease-in-out;
+  }
+}
