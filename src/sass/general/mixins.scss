@@ -4,6 +4,12 @@
   }
 }
 
+@mixin laptop-only {
+  @media (min-width: $width-laptop-small) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (max-width: $width-laptop - 1px) {
     @content;
@@ -66,6 +72,13 @@
   font-weight: 600;
 }
 
+@mixin font-large-exb {
+  font-family: $ms-extra-bold;
+  font-size: 40px;
+  line-height: 90px;
+  font-weight: 800;
+}
+
 @mixin font-medium-sb {
   font-family: $ms-semi-bold;
   font-size: 36px;
@@ -73,7 +86,21 @@
   font-weight: 600;
 }
 
+@mixin font-small-xl-sb {
+  font-family: $ms-semi-bold;
+  font-size: 30px;
+  line-height: 48px;
+  font-weight: 600;
+}
+
 @mixin font-small {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: normal;
+}
+
+@mixin font-small-sb {
+  font-family: $ms-semi-bold;
   font-size: 24px;
   line-height: 32px;
   font-weight: normal;
@@ -109,6 +136,13 @@
   font-size: 14px;
   line-height: 20px;
   font-weight: normal;
+}
+
+@mixin font-xxs-sb {
+  font-family: $ms-semi-bold;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
 }
 
 @mixin font-xxxs {

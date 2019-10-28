@@ -1,6 +1,12 @@
 .form {
   border: none;
 
+  @include mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__fieldset {
     padding: 0;
     margin: 0;
@@ -8,6 +14,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include tablet-small {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include mobile {
+      width: 100%;
+      max-width: 290px;
+    }
   }
 
   &__legend {
@@ -20,6 +36,15 @@
     letter-spacing: size(0.8px);
     color: $white;
     border: none;
+
+    @include tablet-small {
+      margin-bottom: 25px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 
   &__fields {
@@ -30,6 +55,10 @@
     width: 100%;
     max-width: 850px;
     flex-wrap: wrap;
+
+    @include tablet-small {
+      margin-bottom: 25px;
+    }
   }
 
   &__input {
@@ -48,13 +77,43 @@
     color: $white-25;
     transition: all 0.3s ease-in-out;
 
+    @include tablet-small {
+      padding-top: 14px;
+      padding-bottom: 14px;
+      max-width: 330px;
+    }
+
+    @include mobile {
+      max-width: 290px;
+    }
+
     &::placeholder {
       @include font-xs-sb;
       color: $white-25;
+
+      @include tablet-small {
+        @include font-xxs;
+        letter-spacing: 1.1px;
+      }
     }
 
     &--phone {
       letter-spacing: 0.5px;
+    }
+
+    &--name {
+      @include mobile {
+        margin-bottom: 20px;
+      }
+    }
+
+    &--modal {
+      max-width: 100%;
+      margin-bottom: 20px;
+
+      &:nth-child(2) {
+        margin-bottom: 0;
+      }
     }
 
     &:hover {
@@ -111,6 +170,27 @@
         border-radius: 6px;
         background-color: $white;
       }
+
+      @include tablet-small {
+        max-width: 600px;
+        font-size: 11px;
+        letter-spacing: 0.7px;
+        padding-left: 29px;
+
+        &::before {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      @include mobile {
+        margin-top: 29px;
+        padding-left: 30px;
+        font-size: 10px;
+        line-height: 14px;
+        letter-spacing: 1.1px;
+        text-align: left;
+      }
     }
   }
 
@@ -126,6 +206,15 @@
       border-radius: 3px;
       background-color: $blue;
       transition: all 0.3s ease-in-out;
+
+      @include tablet-small {
+        top: 5px;
+        left: 5px;
+        transform: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 3px;
+      }
     }
   }
 

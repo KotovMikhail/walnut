@@ -1,16 +1,44 @@
 .phone {
   @include font-medium-sb;
+  padding-left: 10px;
+  font-size: 30px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+  transition: color 0.3s ease-in-out;
+
+
+  @include laptop-only {
+    font-size: 36px;
+    padding-left: 5px;
+  }
+
+  @include tablet-small {
+    @include font-small-xl-sb;
+    padding-left: 0;
+  }
+
+  @include mobile {
+    @include font-small-sb;
+    padding-left: 0;
+    transition: none;
+  }
 
   &__color {
     color: $blue;
-    transition: all 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+
+    @include mobile {
+      transition: none;
+    }
   }
 
   &:hover > &__color {
     color: $gold;
-    transition: all 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+
+    @include mobile {
+      transition: none;
+    }
   }
 }

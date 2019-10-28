@@ -4,44 +4,78 @@ include pug/layout
 
   .header__wrap
     header.header
+      .header__overlay
       .container
-        .header__top
-          p.header__descr Снег и лед могут появится неожидано, #[span.header__descr-work поэтому мы работаем 24/7]
-          p.header__descr Мы открыты для предложений и идей —  #[a.header__mail(href="mailto:hello@snow-alp.ru") hello@snow-alp.ru]
-          p.header__descr Мы легко можем перезвонить сами — #[a.btn__callback.header__callback(href="#" title="Обратный звонок") обратный звонок]
 
         .header__content
-          a.logo(href="#" title="Snow Alp" target="_blank")
-            img.logo__img(src="./img/logo.png" width="161" height="36" alt="Snow Alp")
-          p.header__slogan Чистка снега и наледи с кровли
+          .logo.header__logo
+            a.logo__link(href="#" title="Snow Alp" target="_blank")
+              img.logo__img(src="./img/logo.png" width="161" height="36" alt="Snow Alp")
+            p.header__slogan.logo__slogan Чистка снега и наледи с кровли
 
-          nav.menu.header__menu
-            ul.menu__list
-              li.menu__item
-                a.menu__link(href="#" target="_blank") Цены
-              li.menu__item
-                a.menu__link(href="#" target="_blank") Преимущества
-              li.menu__item
-                a.menu__link(href="#" target="_blank") Отзывы
-              li.menu__item
-                a.menu__link(href="#" target="_blank") Контакты
+          .header__menu-wrap
+            nav.menu.header__menu
+              .header__top.active
+                p.header__descr Снег и лед могут появится неожидано, #[span.header__descr-work поэтому мы работаем 24/7]
+                p.header__descr Мы открыты для предложений и идей —  #[a.header__mail(href="mailto:hello@snow-alp.ru") hello@snow-alp.ru]
+                p.header__descr Мы легко можем перезвонить сами — #[a.btn.btn--callback.header__callback(href="#" title="Обратный звонок") обратный звонок]
 
-          a.phone.header__phone(href="tel:84953355353") +7 495 #[span.phone__color 335 53 53]
+              button.btn.btn--close.btn--menu-close
+
+              ul.menu__list
+                li.menu__item: a.menu__link(href="#" target="_blank") Цены
+                li.menu__item: a.menu__link(href="#" target="_blank") Преимущества
+                li.menu__item: a.menu__link(href="#" target="_blank") Отзывы
+                li.menu__item: a.menu__link(href="#" target="_blank") Контакты
+
+              button.btn.btn--confirm.btn--whatsapp.menu__btn Написать в #[span WhatsApp]
+
+          button.btn.btn--burger.header__burger
+            span
+
+          a.phone.header__phone(href="tel:84953355353") #[span +7 495] #[span.phone__color 335 53 53]
 
         h1.header__title #[span Очистка снега с крыш] #[span промышленными альпинистами от 25 руб/м#[sup 2]]
 
-        form.form(method="POST" action="#")
+        form.form.header__form(action="#" method="post")
           fieldset.form__fieldset
             legend.form__legend Оставьте заявку — в течение часа к вам выедет специалист
 
             .form__fields
-              input.form__input.form__input--name(type="text" value placeholder="Константин Сыромятников" id="name"  name="name" minlength="0" maxlength="30" required)
+              input.form__input.form__input--name(type="text" value="" placeholder="Константин Сыромятников" id="name"  name="name" minlength="2" maxlength="30" required)
 
               input.form__input.form__input--phone(type="phone" value placeholder="+7 ( ___ ) ___ - __ - __" name="phone" id="phone" required)
-
 
               input.form__input.form__input--confirm.visually-hidden(type="checkbox" name="confirm" id="confirm" value required)
               label.form__label.form__label--confirm(for="confirm")
                 | Я согласен с #[span политикой конфиденциальности] и даю согласие на обработку персональных данных
 
             button.btn.btn--confirm.form__btn(type="submit") Отправить заявку
+
+  .modal.modal--form
+    h2.modal__title Заявка на обратный звонок
+
+    form.form.modal__form(method="post" action="#")
+      fieldset.form__fieldset
+        legend.form__legend.modal__form-legend Оставьте заявку и мы перезвоним вам в течение 15 минут
+
+        .form__fields.modal__form-fields
+          input.form__input.form__input--name.form__input--modal(type="text" value placeholder="Константин Сыромятников" id="name"  name="name" minlength="0" maxlength="30" required)
+
+          input.form__input.form__input--phone.form__input--modal(type="phone" value placeholder="+7 ( ___ ) ___ - __ - __" name="phone" id="phone2" required)
+
+          input.form__input.form__input--confirm.modal__input-confirm.visually-hidden(type="checkbox" name="confirm" id="modal__confirm" value required)
+          label.form__label.form__label--confirm.modal__label-confirm(for="modal__confirm")
+            | Я согласен с #[span политикой конфиденциальности] и даю согласие на обработку персональных данных
+
+        button.btn.btn--confirm.form__btn.btn--modal-confirm(type="submit") Перезвоните мне
+
+    button.btn.btn--close.btn--modal-close.btn--form-close
+
+
+  .modal.modal--success
+    h2.modal__title Заявка успешно отправлена!
+    button.btn.btn--close.btn--modal-close.btn--success-close
+    p.modal__text Спасибо за оставленную заявку, менеджер свяжется с вами в течение 15 минут
+
+  section.block
