@@ -32,6 +32,13 @@ body {
   background-color: $black;
 }
 
+.body {
+  &--menu-opened {
+    width: 100vw;
+    overflow: hidden;
+  }
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -43,12 +50,17 @@ body {
   overflow: hidden;
 }
 
+.block {
+  height: 800px;
+}
+
 .container {
   width: 100%;
-  max-width: 1290px;
+  max-width: 1390px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 50px;
+  box-sizing: border-box;
+  padding: 0 39px;
 
   @include tablet-small {
     padding: 0 39px;

@@ -3,7 +3,7 @@
 }
 
 @function size-desktop($size-in-px) {
-  @return $size-in-px / $width-desktop * 100vw;
+  @return $size-in-px / $width-laptop * 100vw;
 }
 
 @function size-tablet($size-in-px) {

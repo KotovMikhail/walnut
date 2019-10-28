@@ -1,11 +1,46 @@
 .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  @include mobile {
+    justify-content: flex-start;
+  }
 
   &__img {
     display: block;
     max-width: 100%;
     height: auto;
 
+    @include tablet-small {
+      width: 130px;
+    }
+
+    @include mobile {
+      width: 135px;
+    }
   }
 
+  &__slogan {
+    width: 100%;
+    max-width: 105px;
+    margin: 0;
+    @include font-xxxs;
+    letter-spacing: 0.5px;
+
+    @include tablet-small {
+      max-width: 135px;
+      padding-bottom: 6px;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: -0.4px;
+      box-sizing: border-box;
+    }
+
+    @include mobile {
+      width: 100%;
+      padding-left: 6px;
+      letter-spacing: 1px;
+    }
+  }
 }
