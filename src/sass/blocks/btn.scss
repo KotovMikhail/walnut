@@ -183,12 +183,6 @@
     }
   }
 
-  &--modal-form-close {
-  }
-
-  &--modal-success-close {
-  }
-
   &--modal-confirm {
     margin-top: 0;
     padding-top: 20px;
@@ -203,6 +197,12 @@
       color: $black;
       background-color: $gold;
       transition: all 0.3s ease-in-out;
+    }
+
+    @include mobile {
+      padding-left: 40px;
+      padding-right: 40px;
+      letter-spacing: 0.1px;
     }
   }
 }

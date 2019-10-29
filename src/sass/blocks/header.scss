@@ -43,7 +43,7 @@
       background-image: url("../../img/header-bg-tablet.jpg");
     }
 
-    @include mobile {
+    @include mobile-small {
       background-position: -372px center;
     }
 

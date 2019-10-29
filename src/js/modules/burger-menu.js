@@ -4,6 +4,7 @@
   const headerOverlay = document.querySelector(`.header__overlay`);
   window.btnBurger = document.querySelector(`.btn--burger`);
   const btnClose = document.querySelector(`.btn--menu-close`);
+  window.headerTop = document.querySelector(`.header__top`);
 
   const onBtnBurgerMenuOpened = () => {
     menuOpened();
@@ -48,6 +49,11 @@
     }
   };
 
+
+
+
+
+
   window.menuClosed = () => {
     body.classList.remove(`body--menu-opened`);
     window.menuWrap.classList.remove(`header__menu-wrap--opened`);
@@ -64,11 +70,15 @@
   const setupForWidth = (media) => {
     if (media.matches && headerOverlay.classList.contains(`header__overlay--show`)) {
       headerOverlay.classList.remove(`header__overlay--show`);
+      body.classList.remove(`body--menu-opened`)
     }
-
 
     if (media.matches && window.menuWrap.classList.contains(`header__menu-wrap--opened`)) {
       window.menuWrap.classList.remove(`header__menu-wrap--opened`);
+    }
+
+    if (media.matches && headerOverlay.classList.contains(`header__overlay--show`)) {
+      window.headerTop.style.display = `none`;
     }
   };
 

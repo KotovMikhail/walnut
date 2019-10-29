@@ -1,11 +1,9 @@
-(function () {
+(() => {
 
   window.modalForm = document.querySelector(`.modal--form`);
   window.modalSuccess = document.querySelector(`.modal--success`);
   const btnCallBack = document.querySelector(`.header__callback`);
   const btnCallBackClose = window.modalForm.querySelector(`.btn--form-close`);
-
-
 
   window.modalFormClose = () => {
     window.modalForm.classList.remove(`modal--show`);

@@ -6,6 +6,7 @@
   const headerOverlay = document.querySelector(`.header__overlay`);
   window.btnBurger = document.querySelector(`.btn--burger`);
   const btnClose = document.querySelector(`.btn--menu-close`);
+  window.headerTop = document.querySelector(`.header__top`);
 
   const onBtnBurgerMenuOpened = () => {
     menuOpened();
@@ -50,6 +51,11 @@
     }
   };
 
+
+
+
+
+
   window.menuClosed = () => {
     body.classList.remove(`body--menu-opened`);
     window.menuWrap.classList.remove(`header__menu-wrap--opened`);
@@ -66,11 +72,15 @@
   const setupForWidth = (media) => {
     if (media.matches && headerOverlay.classList.contains(`header__overlay--show`)) {
       headerOverlay.classList.remove(`header__overlay--show`);
+      body.classList.remove(`body--menu-opened`)
     }
-
 
     if (media.matches && window.menuWrap.classList.contains(`header__menu-wrap--opened`)) {
       window.menuWrap.classList.remove(`header__menu-wrap--opened`);
+    }
+
+    if (media.matches && headerOverlay.classList.contains(`header__overlay--show`)) {
+      window.headerTop.style.display = `none`;
     }
   };
 
@@ -84,27 +94,35 @@
 
 })();
 
-(function () {
+(() => {
 
-  const headerContent = document.querySelector(`.header__content`);
-  window.headerTop = document.querySelector(`.header__top`);
-  const btnBurgerComputedStyle = getComputedStyle(window.btnBurger).display;
+  window.headerContent = document.querySelector(`.header__content`);
+
+  const header = document.querySelector(`.header`);
 
   document.addEventListener(`scroll`, function () {
-    if (pageYOffset > 1) {
+    const btnBurgerComputedStyle = getComputedStyle(window.btnBurger).display;
 
-      headerContent.classList.add(`header-sticky`);
+    if (pageYOffset > 10) {
+      window.headerContent.classList.add(`header-sticky`);
+
 
       if (btnBurgerComputedStyle === `none`) {
         window.headerTop.style.display = `none`;
+        header.style.paddingTop = `208px`;
+      }
+
+      if (btnBurgerComputedStyle === `block`) {
+        header.style.paddingTop = `83px`;
       }
 
       if (btnBurgerComputedStyle === `block`) {
         window.headerTop.style.display = `flex`;
       }
     } else {
+      header.style.paddingTop = `0`;
       window.headerTop.style.display = `flex`;
-      headerContent.classList.remove(`header-sticky`);
+      window.headerContent.classList.remove(`header-sticky`);
     }
   });
 
@@ -196,20 +214,18 @@
 let phone1 = document.getElementById(`phone`);
 let phone2 = document.getElementById(`phone2`);
 
-let im = new Inputmask(`+7 (999)-999-99-99`);
+let im = new Inputmask(`+7 ( 999 ) 999 - 99 - 99`);
 im.mask(phone1);
 
-let im2 = new Inputmask(`+7 (999)-999-99-99`);
+let im2 = new Inputmask(`+7 ( 999 ) 999 - 99 - 99`);
 im2.mask(phone2);
 
-(function () {
+(() => {
 
   window.modalForm = document.querySelector(`.modal--form`);
   window.modalSuccess = document.querySelector(`.modal--success`);
   const btnCallBack = document.querySelector(`.header__callback`);
   const btnCallBackClose = window.modalForm.querySelector(`.btn--form-close`);
-
-
 
   window.modalFormClose = () => {
     window.modalForm.classList.remove(`modal--show`);
