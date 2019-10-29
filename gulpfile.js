@@ -21,14 +21,15 @@ var uglify = require('gulp-terser');
 
 var pug = require('gulp-pug');
 var prettier = require('gulp-pretty-html');
+var replace = require('gulp-replace');
 
 var server = require('browser-sync').create();
 
-gulp.task('clean', function() {
+gulp.task('clean', function () {
   return del('build');
 });
 
-gulp.task('copy', function() {
+gulp.task('copy', function () {
   return gulp.src([
       'src/fonts/**/*.{woff,woff2}'
     ], {
@@ -74,7 +75,7 @@ gulp.task('images:min', function () {
     .pipe(gulp.dest('build/img'));
 });
 
-gulp.task('sprite', function() {
+gulp.task('sprite', function () {
   return gulp.src('src/img/sprite/*.svg')
     .pipe(newer('build/img'))
     .pipe(imagemin([
@@ -97,6 +98,7 @@ gulp.task('style', function () {
     .pipe(sass({
       outputStyle: 'expanded'
     }))
+    .pipe(replace('url("../../', 'url("../'))
     .pipe(postcss([
       autoprefixer()
     ]))
@@ -113,43 +115,43 @@ gulp.task('style:min', function () {
     .pipe(gulp.dest('build/css'));
 });
 
-gulp.task('scripts:vendor', function() {
+gulp.task('scripts:vendor', function () {
   return gulp.src([
       'src/js/vendor/*.js'
     ])
-  .pipe(plumber())
-  .pipe(concat('vendor.js'))
-  .pipe(gulp.dest('build/js'))
-  .pipe(uglify())
-  .pipe(rename({
-    suffix: '.min'
-  }))
-  .pipe(gulp.dest('build/js'));
+    .pipe(plumber())
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest('build/js'))
+    .pipe(uglify())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('build/js'));
 });
 
-gulp.task('scripts', function() {
+gulp.task('scripts', function () {
   return gulp.src([
       'src/js/global/*.js',
       'src/js/spa/*.js',
       'src/js/modules/*.js',
 
     ])
-  .pipe(plumber())
-  .pipe(concat('script.js'))
-  .pipe(gulp.dest('build/js'))
-  .pipe(rename({
-    suffix: '.min'
-  }))
-  .pipe(gulp.dest('build/js'));
+    .pipe(plumber())
+    .pipe(concat('script.js'))
+    .pipe(gulp.dest('build/js'))
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('build/js'));
 });
 
-gulp.task('scripts:min', function() {
+gulp.task('scripts:min', function () {
   return gulp.src([
       'build/js/script.min.js'
     ])
-  .pipe(plumber())
-  .pipe(uglify())
-  .pipe(gulp.dest('build/js'));
+    .pipe(plumber())
+    .pipe(uglify())
+    .pipe(gulp.dest('build/js'));
 });
 
 gulp.task('html', function () {

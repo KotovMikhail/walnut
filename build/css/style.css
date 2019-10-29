@@ -1899,7 +1899,7 @@ body {
   top: -4px;
   width: 29px;
   height: 29px;
-  background-image: url("../../img/icon-whatsapp.png");
+  background-image: url("../img/icon-whatsapp.png");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -1915,7 +1915,7 @@ body {
 .btn--whatsapp:hover span::before, .btn--whatsapp:focus span::before {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-image: url("../../img/icon-whatsapp-hover.png");
+  background-image: url("../img/icon-whatsapp-hover.png");
 }
 
 .btn--callback {
@@ -2018,7 +2018,7 @@ body {
   position: relative;
   width: 100%;
   background-color: #000000;
-  background-image: url("../../img/header-bg-desktop.jpg");
+  background-image: url("../img/header-bg-desktop.jpg");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -2027,7 +2027,7 @@ body {
 
 @media (max-width: 1023px) {
   .header__wrap {
-    background-image: url("../../img/header-bg-tablet.jpg");
+    background-image: url("../img/header-bg-tablet.jpg");
   }
 }
 
@@ -2459,7 +2459,7 @@ body {
     width: 24px;
     height: 24px;
     font-size: 0;
-    background-image: url("../../img/icon-phone.png");
+    background-image: url("../img/icon-phone.png");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
@@ -2521,7 +2521,7 @@ body {
           transform: translateX(-50%);
   width: 62px;
   height: 46px;
-  background-image: url("../../img/icon-mark.svg");
+  background-image: url("../img/icon-mark.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
